@@ -1,0 +1,431 @@
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="76x76" href="ThankYoufavicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ThankYoufavicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ThankYoufavicon/favicon-16x16.png">
+    <link rel="manifest" href="ThankYoufavicon/site.webmanifest">
+    <link rel="mask-icon" href="ThankYoufavicon/safari-pinned-tab.svg" color="#5bbad5">
+    <title id="title">Thank You 💖</title>
+    <!-- CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
+    <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+            width: 100%;
+            background-color: royalblue !important;
+        }
+
+        #thankyou {
+            background: #FFF;
+            font-family: arial;
+            border: 15px solid rgb(54, 100, 238);
+            min-height: 100%;
+            width: 100%;
+            position: absolute;
+            border-radius: 8px;
+        }
+
+        .service {
+            /* background: #fff; */
+        }
+
+        .service_title {
+            background: #fff;
+            padding: 10px 0px;
+        }
+
+        .service_title h2 {
+            margin: 10px 0px;
+            font-family: Gulim;
+            font-weight: 600;
+            color: #000;
+        }
+
+        /* .service_topic {
+            background: #e8e7e7;
+            border-bottom: 1px dashed #ccc;
+        } */
+
+        .service_topic ul {
+            list-style: none;
+            padding: 1px;
+        }
+
+        .service_topic ul li {
+            padding: 7px 0px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .service_topic ul li i {
+            color: #9e9d9d;
+            padding-right: 10px;
+        }
+
+        .service_info {
+            padding-bottom: 25px;
+            color: #333 !important;
+        }
+
+        .service_info .service_success {
+            width: 64px;
+            height: 64px;
+            background: rgb(61, 47, 204);
+            padding: 18px;
+            border-radius: 50px;
+            margin: 0px auto;
+            margin-top: 15px;
+        }
+
+        .service_success i {
+            font-size: 28px;
+            color: #fff;
+        }
+
+        .service_info h3 {
+            font-weight: lighter !important;
+            margin: 58px 0 0 0px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .service_name {
+            font-size: 20px;
+            /*font-weight: ;*/
+            font-family: 'Open Sans', sans-serif;
+            margin: 12px;
+        }
+
+        .service_click {
+            font-size: 16px;
+            padding: 114px 15px;
+        }
+
+        .btn_browse {
+            background: #f5f3e6;
+            background: -moz-linear-gradient(top, #f5f3e6 0%, #9d8a00 100%);
+            background: -webkit-linear-gradient(top, #f5f3e6 0%, #9d8a00 100%);
+            background: linear-gradient(to bottom, #f5f3e6 0%, #9d8a00 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f3e6', endColorstr='#9d8a00', GradientType=0);
+            border: 1px solid rgb(61, 47, 204);
+            border-radius: 50px;
+            padding: 7px 36px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .offheader {
+            width: 100%;
+            display: block;
+            background-color: rgb(61, 47, 204);
+            z-index: 111;
+            padding: 0 15px;
+        }
+
+        .wrapper {
+            position: relative;
+            display: inline-block;
+            border: none;
+            font-size: 14px;
+            margin: 0px auto;
+            top: 99px;
+        }
+
+        .wrapper input {
+            border: 0;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            position: absolute !important;
+            clip: rect(1px 1px 1px 1px);
+            clip: rect(1px, 1px, 1px, 1px);
+            opacity: 0;
+        }
+
+        .wrapper label {
+            position: relative;
+            float: right;
+            color: #C8C8C8;
+        }
+
+        .wrapper label:before {
+            margin: 5px;
+            content: "\f005";
+            font-family: FontAwesome;
+            display: inline-block;
+            font-size: 1.5em;
+            color: #ccc;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            color: #ffbf00;
+        }
+
+        /*            .wrapper input:checked ~ label:before {
+                            color: #ffbf00;
+                        }
+            
+                        .wrapper label:hover ~ label:before {
+                            color: #ffdb70;
+                        }
+            
+                        .wrapper label:hover:before {
+                            color: #ffbf00;
+                        }*/
+        svg {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .toggle {
+            cursor: pointer;
+            background: #ee5626;
+            padding: 0em;
+            border-radius: 100%;
+            display: table;
+            width: 58px;
+            -webkit-transition: background 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+            transition: background 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+            /* Temp Scene Stuff */
+            position: absolute;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            top: 21vh;
+            left: 50%;
+        }
+
+        .toggle.open {
+            background: rgb(61, 47, 204);
+        }
+
+        .tick {
+            stroke-dasharray: 44;
+            stroke-dashoffset: 44;
+        }
+
+        .open .retract {
+            stroke-dasharray: 20;
+            stroke-dashoffset: 20;
+            -webkit-animation: retract 4.5s cubic-bezier(0.19, 1, 0.22, 1) forwards 1;
+            animation: retract 4.5s cubic-bezier(0.19, 1, 0.22, 1) forwards 1;
+        }
+
+        .open .tick {
+            -webkit-animation: dash 4.5s cubic-bezier(0.19, 1, 0.22, 1) forwards 1;
+            animation: dash 4.5s cubic-bezier(0.19, 1, 0.22, 1) forwards 1;
+        }
+
+        @-webkit-keyframes dash {
+            from {
+                stroke-dashoffset: 44;
+            }
+
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes dash {
+            from {
+                stroke-dashoffset: 44;
+            }
+
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @-webkit-keyframes retract {
+            from {
+                stroke-dashoffset: 0;
+            }
+
+            to {
+                stroke-dashoffset: 20;
+            }
+        }
+
+        @keyframes retract {
+            from {
+                stroke-dashoffset: 0;
+            }
+
+            to {
+                stroke-dashoffset: 20;
+            }
+        }
+
+        .pulse-button {
+            position: relative;
+            top: 50%;
+            left: 49%;
+            margin-left: -50px;
+            margin-top: 111px;
+            display: block;
+            width: 128px;
+            height: 63px;
+            font-size: 1.3em;
+            font-weight: light;
+            font-family: 'Trebuchet MS', sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 68px;
+            letter-spacing: -1px;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            background: rgb(61, 47, 204);
+            cursor: pointer;
+            box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
+            -webkit-animation: pulse 1.5s infinite;
+        }
+
+        .pulse-button:hover {
+            -webkit-animation: none;
+        }
+
+        @-webkit-keyframes pulse {
+            0% {
+                -moz-transform: scale(0.9);
+                -ms-transform: scale(0.9);
+                -webkit-transform: scale(0.9);
+                transform: scale(0.9);
+            }
+
+            70% {
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+            }
+
+            100% {
+                -moz-transform: scale(0.9);
+                -ms-transform: scale(0.9);
+                -webkit-transform: scale(0.9);
+                transform: scale(0.9);
+                box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+            }
+        }
+    </style>
+    <script>
+        function myFunction() {
+            var txt = getUrlParameter("msg");
+
+            if (txt == "" || txt == null) {
+                txt = "It helps a lot"
+            } else {
+                document.getElementById("para1").style.fontWeight = "900";
+                document.getElementById("title").innerHTML = txt;
+            }
+            document.getElementById("para1").innerHTML = txt;
+        }
+
+        function content() {
+            var clink = getUrlParameter("clink");
+            // location.href = clink;
+            location.href = "https://bibek10550.github.io/kiitcse";
+        }
+
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+    </script>
+</head>
+
+<body id="thankyou" onload="myFunction()">
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="service">
+                    <div class="service_title text-center offheader">
+                        <!-- <img src="logo.jpeg" style="height: 50px; width: 50px; border-radius: 8px;" alt="logo" title="Bibek">  -->
+                    </div>
+                    <div class="service_topic">
+                        <ul>
+                            <!-- <img class="img-responsive" src="logo.jpeg" style="height: 50px; width: 50px; border-radius: 8px;" alt="logo" title="Bibek"/> -->
+                        </ul>
+                    </div>
+                    <div class="service_info text-center">
+                        <div class="toggle open">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 56.7 57"
+                                enable-background="new 0 0 56.7 57" xml:space="preserve">
+                                <path class="retract" fill="none" stroke="#f1f1f1" stroke-width="4"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                    d="M36,6.3c5.7,2.1,10.2,6.2,12.9,11.1"></path>
+                                <path fill="none" stroke="#f1f1f1" stroke-width="4" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-miterlimit="10"
+                                    d="M48.9,17.4c3.1,5.8,3.9,12.9,1.4,19.7c-4.6,12.4-18.4,18.8-30.8,14.3S0.7,33,5.2,20.5S23.6,1.7,36,6.3">
+                                </path>
+                                <polyline class="tick" fill="none" stroke="#f1f1f1" stroke-width="4"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                    points="20.3,25.4 28.6,33.9 46.7,8.3 "></polyline>
+                            </svg>
+                        </div>
+                        <h3>Thank You for your feedback</h3>
+                        <p class="service_name" id='para1'></p>
+                        <!--<h3>Thank you for choosing<span class="service_name">Mobie mentor service</span></h3>
+                            <p class="service_name">Mobie mentor service</p>		-->
+                        <div class="wrapper">
+                            <input type="checkbox" id="st1" value="1" />
+                            <label for="st1"></label>
+                            <input type="checkbox" id="st2" value="2" />
+                            <label for="st2"></label>
+                            <input type="checkbox" id="st3" value="3" />
+                            <label for="st3"></label>
+                            <input type="checkbox" id="st4" value="4" />
+                            <label for="st4"></label>
+                            <input type="checkbox" id="st5" value="5" />
+                            <label for="st5"></label>
+                        </div>
+                        <!--<div class="container">-->
+                        <span class="pulse-button" onclick="content()">Go back</span>
+                        <!--</div>-->
+                        <p style="padding-top: 40px;">Dear User, Thank you for your Interest and Support. Your feedback
+                            has beed Received. To access the content Please click the above button.</p>
+                        <!-- <a class="btn btn_browse">BROWSE NOW</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <script>
+        //            $('.toggle').on('load', function () {
+        //                $(this).toggleClass('open');
+        //            });
+        $(function () {
+            setTimeout(function () {
+                $('.toggle').removeClass('open');
+            }, 100);
+        });
+
+        setInterval(function () {
+            if ($('.toggle').hasClass('open')) {
+                $('.toggle').removeClass('open');
+            } else {
+                $('.toggle').addClass('open');
+            }
+        }, 1500);
+        //# sourceURL=pen.js
+    </script> -->
+</body>
+
+</html>
