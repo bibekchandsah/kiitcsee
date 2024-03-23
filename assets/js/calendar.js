@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const themeContainers = {
         calendar: { container: document.getElementById("theme-buttons-container-calendar"), url: "https://bibek10550.github.io/event-calendar/", mobileWidth: 380, desktopWidth: 453, mobileHeight: 630, desktopHeight: 630 },
         commenting: { container: document.getElementById("theme-buttons-container-commenting"), url: "https://bibek10550.github.io/dailyQuote/", mobileWidth: 388, desktopWidth: 640, mobileHeight: 583, desktopHeight: 430 },
-        // music: { container: document.getElementById("theme-buttons-container-music"), url: "https://bibek10550.github.io/bibeksha/music.html", mobileWidth: 376, desktopWidth: 420, mobileHeight: 762, desktopHeight: 762 },
-        // music: { container: document.getElementById("theme-buttons-container-music"), url: "https://bibek10550.github.io/Music/", mobileWidth: 376, desktopWidth: 420, mobileHeight: 762, desktopHeight: 762 },
         linksaver: { container: document.getElementById("theme-buttons-container-linksaver"), url: "https://bibek10550.github.io/linksaver/", mobileWidth: 330, desktopWidth: 330, mobileHeight: 456, desktopHeight: 456 },
     };
     // Function to close all theme containers
@@ -74,3 +72,46 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+
+
+
+
+
+// short cut key for calendar "alt + c"
+document.addEventListener('keydown', function (event) {
+    // Check if Alt + C is pressed
+    if (event.altKey && event.key.toLowerCase() === 'c') {
+        event.preventDefault(); // Prevent default browser behavior
+
+        // Handle different platforms and browsers
+        const platform = navigator.platform.toLowerCase();
+        const browser = navigator.userAgent.toLowerCase();
+
+        if ((platform.includes('mac') || browser.includes('safari')) ||
+            (platform.includes('mac') || browser.includes('firefox'))) {
+            // For macOS Safari and Firefox
+            handleCalendar();
+        } else if (platform.includes('win') || browser.includes('edge')) {
+            // For Windows Edge
+            handleCalendar();
+        } else if (platform.includes('linux')) {
+            // For Linux
+            handleCalendar();
+        } else {
+            // For other platforms and browsers
+            console.log('Alt + C shortcut not supported on this platform/browser.');
+        }
+    }
+});
+function handleCalendar() {
+    const calendarContainer = document.getElementById('theme-buttons-container-calendar');
+    const calendarButton = document.querySelector('.switcher-btn[title="calendar"]');
+    if (calendarButton && calendarContainer.style.display === 'none') {
+        calendarButton.click(); // Simulate a click on the calendar button
+        calendarContainer.style.display = 'flex';
+    } else {
+        calendarContainer.style.display = 'none';
+    }
+}

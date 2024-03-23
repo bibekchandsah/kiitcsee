@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>4th Semester PYQs</title>
+    <title>2nd Semester Notes</title>
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
@@ -60,7 +60,7 @@
     <link href="assets/css/chatbot.css" rel="stylesheet">
 </head>
 
-<body title="Developed by Bibek">
+<body>
     <!-- Navbar -->
     <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary fixed-top">
         <div class="container-fluid">
@@ -132,7 +132,7 @@
                     </select>
                 </div>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2 search-input" id="input-box" type="search" placeholder="Search anything here..." aria-label="Search" autocomplete="off" oninput="toggleClearIcon()" onkeydown="searchOnEnter(event)" onkeyup="search()">
+                    <input title="Alt+S search dropdown" class="form-control me-2 search-input" id="input-box" type="search" placeholder="Search anything here..." aria-label="Search" autocomplete="off" oninput="toggleClearIcon()" onkeydown="searchOnEnter(event)" onkeyup="search()">
                     <button class="btn btn-outline-primary" onclick="searchGoogle()">Search</button>
                 </form>
                 <!-- search box -->
@@ -207,38 +207,18 @@
     <!-- drop down -->
     <form class="row gy-5 gx-5 mt-5 align-items-center justify-content-center">
         <div class="col-auto">
-            <label class="visually-hidden" for="subjectSelect">Subject</label>
-            <select class="form-select filter" id="subjectSelect">
+            <label class="visually-hidden" for="noteSubjectSelect">Subject</label>
+            <select class="form-select noteFilter" id="NoteSubjectSelect">
                 <option value="">Choose Subject</option>
                 <option value="java">Java</option>
-                <option value="os">OS</option>
+                <option value="clab">C lab</option>
                 <option value="dbms">DBMS</option>
+                <option value="saplab">Sap lab</option>
             </select>
         </div>
-        <div class="col-auto">
-            <label class="visually-hidden" for="yearSelect">Year</label>
-            <select class="form-select filter" id="yearSelect">
-                <option value="">Choose Year</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-            </select>
-        </div>
-        <div class="col-auto">
-            <label class="visually-hidden" for="examSelect">Exam</label>
-            <select class="form-select filter" id="examSelect">
-                <option value="">Choose Exam</option>
-                <option value="mid">Mid Semester</option>
-                <option value="end">End Semester</option>
-            </select>
-        </div>
-        <div class="col-auto">
-            <label class="visually-hidden" for="paperSelect">Paper</label>
-            <select class="form-select filter" id="paperSelect">
-                <option value="">Choose Paper</option>
-                <!-- <option value="question">Question</option> -->
-                <option value="solution">Solution</option>
-            </select>
+        <div class="col-sm-6 input-group w-auto">
+            <span class="input-group-text" id="basic-addon1">Topic</span>
+            <input type="text" class="form-control" aria-label="topic" aria-describedby="basic-addon1" id="noteTopicInput">
         </div>
         <div class="col-auto">
             <label class="visually-hidden" for="resetbutton">Reset</label>
@@ -286,7 +266,7 @@
     <div class="toast-container position-absolute top-0 end-0 p-3" id="downloadToast">
         <div class="toast fade" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
-                <img src="assets/image/KIIT_CSE_blue_transparent.png" width="20px" height="20px" class="rounded me-2 logoImage" alt="logo">
+                <img src="#" width="20px" height="20px" class="rounded me-2 logoImage" alt="logo">
                 <strong class="me-auto">KIIT CSE</strong>
                 <small>Just now</small>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -295,84 +275,53 @@
         </div>
     </div>
     <!--  Table -->
-    <div data-aos="fade-up class="table-responsive mt-4">
+    <div class="table-responsive mt-4">
         <table id="dataTable" class="table table-bordered table-hover caption-top align-middle text-center">
-            <caption>CSE 4th Semester</caption>
+            <caption>CSE 2nd Semester</caption>
             <thead>
                 <tr>
                     <th scope="col">Subject</th>
-                    <th scope="col">Year</th>
-                    <th scope="col">Exam</th>
-                    <th scope="col">Questions</th>
-                    <th scope="col">Solutions</th>
+                    <th scope="col">Topic</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
-                <tr data-subject="java" data-year="2023" data-exam="mid" data-paper="solution">
-                    <th scope="row">COA</th>
-                    <td>2018</td>
-                    <td>Mid Semester</td>
-                    <td class="download_section align-middle">Spring Mid Semester <div class="btn-group" role="group" aria-label="Download Section">
-                            <button type="button" class="clickLink btn btn-primary btn-sm modalToast-trigger" data-toggle="modal" href="#myModal" data-id="2018_Question_Bank">Preview</button>
-                            <button type="button" class="btn btn-primary btn-sm download-file toast-trigger" onclick="downloadFiles(['2018_Question_Bank'], this)">Download</button>
-                        </div>
-                    </td>
-                    <td class="solution_sections">
-                        <span>Available</span>
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="clickLink btn btn-primary btn-sm" data-toggle="modal" href="#myModal" data-id="try">Preview</button>
-                            <button type="button" class="btn btn-primary btn-sm download-folder toast-trigger" data-folder="sap_lab_notes">Download</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr data-subject="os" data-year="2022" data-exam="end" data-paper="question">
-                    <th scope="row">OS</th>
-                    <td>2022</td>
-                    <td>End Semester</td>
-                    <td class="download_section">Spring End Semester<div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary btn-sm toast-trigger">Preview</button>
-                            <button type="button" class="btn btn-primary btn-sm">Download</button>
-                        </div>
-                    </td>
-                    <td class="solution_sections">
-                        <span>Not Available</span>
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary btn-sm">Preview</button>
-                            <button type="button" class="btn btn-primary btn-sm">Download</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr data-subject="java" data-year="2021" data-exam="end" data-paper="solution">
-                    <th scope="row">Java</th>
-                    <td>2021</td>
-                    <td>End Semester</td>
-                    <td class="download_section">Spring Mid Semester<div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary btn-sm">Preview</button>
-                            <button type="button" class="btn btn-primary btn-sm">Download</button>
-                        </div>
-                    </td>
-                    <td class="solution_sections">
-                        <span>Available</span>
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary btn-sm">Preview</button>
-                            <button type="button" class="btn btn-primary btn-sm">Download</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr data-subject="dbms" data-year="2021" data-exam="mid" data-paper="solution">
+                <tr data-subject="dbms">
                     <th scope="row">DBMS</th>
-                    <td>2021</td>
-                    <td>Mid Semester</td>
-                    <td class="download_section">Spring Mid Semester<div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary btn-sm">Preview</button>
-                            <button type="button" class="btn btn-primary btn-sm">Download</button>
+                    <td class="download_section align-middle">dbms solution spring <div class="btn-group" role="group" aria-label="Download Section">
+                            <button type="button" class="clickLink btn btn-primary btn-sm modalToast-trigger" data-toggle="modal" href="#myModal" data-id="dbms_solution_spring_end_semester_2023">Preview</button>
+                            <button type="button" class="btn btn-primary btn-sm download-file toast-trigger" onclick="downloadFiles(['dbms_solution_spring_end_semester_2023'], this)">Download</button>
                         </div>
                     </td>
-                    <td class="solution_sections">
-                        <span>Available</span>
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary btn-sm">Preview</button>
-                            <button type="button" class="btn btn-primary btn-sm">Download</button>
+                </tr>
+                <tr data-subject="cLab">
+                    <th scope="row">C Lab</th>
+                    <td class="download_section align-middle">c lab solution spring <div class="btn-group" role="group" aria-label="Download Section">
+                            <button type="button" class="clickLink btn btn-primary btn-sm modalToast-trigger" data-toggle="modal" href="#myModal" data-id="dbms_solution_spring_end_semester_2023">Preview</button>
+                            <button type="button" class="btn btn-primary btn-sm download-file toast-trigger" onclick="downloadFiles(['dbms_solution_spring_end_semester_2023'], this)">Download</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr data-subject="java">
+                    <th scope="row">java Lab</th>
+                    <td class="download_section align-middle">java solution spring <div class="btn-group" role="group" aria-label="Download Section">
+                            <button type="button" class="clickLink btn btn-primary btn-sm modalToast-trigger" data-toggle="modal" href="#myModal" data-id="dbms_solution_spring_end_semester_2023">Preview</button>
+                            <button type="button" class="btn btn-primary btn-sm download-file toast-trigger" onclick="downloadFiles(['dbms_solution_spring_end_semester_2023'], this)">Download</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr data-subject="saplab">
+                    <th scope="row">sap Lab</th>
+                    <td class="download_section align-middle">sap solution spring <div class="btn-group" role="group" aria-label="Download Section">
+                            <button type="button" class="clickLink btn btn-primary btn-sm modalToast-trigger" data-toggle="modal" href="#myModal" data-id="dbms_solution_spring_end_semester_2023">Preview</button>
+                            <button type="button" class="btn btn-primary btn-sm download-file toast-trigger" onclick="downloadFiles(['dbms_solution_spring_end_semester_2023'], this)">Download</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr data-subject="cLab">
+                    <th scope="row">C Lab</th>
+                    <td class="download_section align-middle">nesting loop <div class="btn-group" role="group" aria-label="Download Section">
+                            <button type="button" class="clickLink btn btn-primary btn-sm modalToast-trigger" data-toggle="modal" href="#myModal" data-id="dbms_solution_spring_end_semester_2023">Preview</button>
+                            <button type="button" class="btn btn-primary btn-sm download-file toast-trigger" onclick="downloadFiles(['dbms_solution_spring_end_semester_2023'], this)">Download</button>
                         </div>
                     </td>
                 </tr>
@@ -452,7 +401,7 @@
         <div id="imagePreview" style="display: none;"></div>
     </div>
     <!-- chatbot -->
-    <button anim="ripple" class="chatbot-toggler" id="updatechatbot">
+    <button title="Alt+B chat bot" anim="ripple" class="chatbot-toggler" id="updatechatbot">
         <span class="material-symbols-rounded">mode_comment</span>
         <span class="material-symbols-outlined">close</span>
     </button>
@@ -479,8 +428,19 @@
     <script src="assets/js/material.js"></script>
     <script src="assets/js/chatbot.js"></script>
     <script src="assets/js/calendar.js"></script>
-    <script src="/assets/js/functions.js"></script>
-    <script src="/assets/js/fileUrls1stPYQs.js"></script>
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/js/fileUrls1stNote.js"></script>
+    <script src="assets/js/fileUrls1stPYQs.js"></script>
+    <script src="assets/js/fileUrls2ndNote.js"></script>
+    <script src="assets/js/fileUrls2ndPYQs.js"></script>
+    <script src="assets/js/fileUrls3rdNote.js"></script>
+    <script src="assets/js/fileUrls3rdPYQs.js"></script>
+    <script src="assets/js/fileUrls4thNote.js"></script>
+    <script src="assets/js/fileUrls4thPYQs.js"></script>
+    <script src="assets/js/fileUrls5thNote.js"></script>
+    <script src="assets/js/fileUrls5thPYQs.js"></script>
+    <script src="assets/js/fileUrls6thNote.js"></script>
+    <script src="assets/js/fileUrls6thPYQs.js"></script>
     <script>
         // animation on scroll
         AOS.init();

@@ -106,7 +106,8 @@ body.show-chatbot .chatbot-toggler span:last-child {
     bottom: 90px;
     width: 420px;
     /* background: var(--white); */
-    background: #d0ccdd;
+    /* background: #d0ccdd; */
+    background: hsl(var(--hue-color), 100%, 68.63%);
     border-radius: var(--normal-border);
     overflow: hidden;
     opacity: 0;
@@ -232,7 +233,8 @@ header h2 {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: var(--white);
+    /* background: var(--white); */
+    background: var(--primary-color);
     padding: 3px 20px;
     border-top: 1px solid #ddd;
     /* border-top: 1px solid --white; */
@@ -251,7 +253,11 @@ header h2 {
     padding-left: 15px;
     margin-top: 5px;
     margin-bottom: 5px;
+    background: var(--primary-color);
+}
 
+.chat-input textarea::placeholder {
+    color: var(--text-color);
 }
 
 .chat-input span {
