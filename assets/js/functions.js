@@ -5,7 +5,7 @@ async function downloadFolderAsZip(folderName, button) {
 
     button.innerText = 'Downloading...';
     button.disabled = true;
-    const githubToken = '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';
+    // const githubToken = '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';
 
     // Get the URL from the folderUrls object
     // let url = folderUrls[folderName];
@@ -115,8 +115,6 @@ async function downloadFiles(fileNames, button) {
 
     button.innerText = 'Downloading...';
     button.disabled = true;
-
-    // const githubToken = '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';
 
     try {
         const zip = new JSZip();
