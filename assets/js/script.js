@@ -24,7 +24,7 @@ logoImages.forEach(function (logoImage) {
 });
 
 // Update dropdown menu links to open the corresponding page when clicked
-// https://bibek10550.github.io/kiitcse/
+// https://bibekchandsah.github.io/kiitcse/
 // var dropdownMenus = document.querySelectorAll('.dropdown-menu .FirstSemesterPYQs');
 // dropdownMenus.forEach(function (dropdownMenu) {
 //     dropdownMenu.href = '/assets/PYQs/1st_Semester_PYQs.html';
@@ -716,7 +716,7 @@ function setWhatsappLink() {
         });
     } else {
         console.log("pc devices");
-        whatsappLink.href = 'whatsapp://send?text=Go%20to%20KIIT%20CSE-%20https://bibek10550.github.io/kiitcse/%20KIIT%20CSE%20is%20resource%20hub%20which%20simplifies%20your%20educational%20journey%20in%20Computer%20Science%20and%20Engineering%20(CSE).%20It%20offers:%20Previous%20Year%20Questions%20(PYQs),%20Concise%20Notes,%20Video%20Lectures.';
+        whatsappLink.href = 'whatsapp://send?text=Go%20to%20KIIT%20CSE-%20https://bibekchandsah.github.io/kiitcse/%20KIIT%20CSE%20is%20resource%20hub%20which%20simplifies%20your%20educational%20journey%20in%20Computer%20Science%20and%20Engineering%20(CSE).%20It%20offers:%20Previous%20Year%20Questions%20(PYQs),%20Concise%20Notes,%20Video%20Lectures.';
 
         // Hide image preview if it's visible
         imagePreview.style.display = 'none';
